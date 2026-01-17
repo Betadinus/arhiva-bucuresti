@@ -1,0 +1,259 @@
+body {
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+body.fonts-ready {
+  opacity: 1;
+}
+
+.content-box {
+  width: 80%;
+  height: auto;
+  margin: 60px auto;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    0 6px 20px rgba(0, 0, 0, 0.19);
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  display: none; /* only one page shown */
+}
+
+.content-box.is-active {
+  display: block;
+  animation: pageIn 0.6s ease;
+}
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: "Playfair Display", serif;
+}
+
+h2 {
+  text-align: center;
+  font-size: 20px;
+  font-family: "Libre Baskerville", serif;
+  margin-top: 80px;
+  margin-bottom: 30px;
+  color: #777777;
+  letter-spacing: 10px;
+  font-weight: lighter;
+}
+
+h3 {
+  text-align: center;
+  font-family: "IM Fell English SC", serif;
+  font-size: 20px;
+  font-style: italic;
+  color: #777777;
+  font-weight: lighter;
+}
+
+h4 {
+  font-family: "im fell english", serif;
+  font-size: 15px;
+  color: #cfc6b8;
+  margin-bottom: 50px;
+  text-align: center;
+  font-weight: lighter;
+  letter-spacing: 5px;
+}
+
+.ToC {
+  text-align: center;
+  font-family:"Pirata One", serif;
+  font-size: 60px;
+  color: #B08A3E;
+  font-weight: normal;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  letter-spacing: 10px;
+}
+
+.divider{
+  width: 90%;
+  margin: 60px auto;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  height: 2px;
+}
+
+.image-container {
+  width: 85%;
+  margin: 50px auto 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img {
+  width: 85%;
+  height: auto;
+  display: block;
+  border: 10px solid #fff;
+  box-shadow:
+    0 4px 8px rgba(0,0,0,0.2),
+    0 6px 20px rgba(0,0,0,0.19);
+  box-sizing: border-box;
+}
+
+.text-columns {
+  column-count: 2;
+  column-gap: 60px;
+  font-family: "Libre Baskerville", serif;
+  font-size: 14px;
+  line-height: 1.5;
+  width: 85%;
+  margin: 60px auto;
+  letter-spacing: 0.1em;
+  word-spacing: 10px;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+.text-columns p {
+  margin: 0 0 1.2em 0;
+}
+
+.three::first-letter {
+  -webkit-initial-letter: 3;
+  initial-letter: 3;
+  color: #B08A3E;
+  padding-right: 10px;
+  font-size: 3.5em;
+  font-family: "Pirata One", serif;
+  float: left;
+}
+
+.quote {
+  width: 85%;
+  height: auto;
+  margin: 50px auto;
+  margin-bottom: 80px;
+  background: #FAF8F2;
+  border-left: #B08A3E 8px solid;
+  box-sizing: border-box;
+  padding: 5px 25px;
+  font-family: "playfair display", serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-style: italic;
+  font-weight: lighter;
+  color: #222;
+}
+
+.sidenav {
+  height: 100%;
+  width: 25%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #222;
+  overflow-x: hidden;
+  padding-top: 20px;
+  background-image: linear-gradient(
+    to right,
+    #222 0%,
+    #222 calc(100% - 8px),
+    #B08A3E calc(100% - 8px),
+    #B08A3E calc(100% - 6px),
+    #000 calc(100% - 6px),
+    #000 calc(100% - 4px),
+    #B08A3E calc(100% - 4px),
+    #B08A3E 100%
+  );
+}
+
+.sidenav a {
+  display: block;
+  padding: 20px 28px;
+  text-decoration: none;
+  font-family: "Libre Baskerville", serif;
+  font-size: 20px;
+  color: #cfc6b8;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-right: 8px;
+  background: transparent;
+}
+
+.sidenav a span {
+  display: inline-block;
+  transform: translateX(0);
+  transition: transform 0.22s cubic-bezier(.2,.8,.2,1),
+              color 0.15s ease;
+}
+
+.sidenav a:hover span,
+.sidenav a.active span {
+  transform: translateX(15px);
+  color: #B08A3E;
+}
+
+.sidenav a:hover,
+.sidenav a.active {
+  background: #26231F;
+}
+
+.main {
+  margin-left: 25%;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  margin: 80px auto 20px;
+}
+
+.nav-arrow {
+  background: none;
+  border: none;
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  color: #B08A3E;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.nav-arrow:hover {
+  transform: scale(1.2);
+  color: #8f6f2f;
+}
+
+.nav-arrow:disabled {
+  opacity: 0.2;
+  cursor: default;
+  transform: none;
+}
+
+.box-footer {
+  width: 85%;
+  margin: 80px auto 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+.box-footer h3 {
+  margin: 0;
+  text-align: center;
+}
