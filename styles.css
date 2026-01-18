@@ -22,8 +22,23 @@ html {
     0 6px 20px rgba(0, 0, 0, 0.19);
   overflow-y: auto;
   overflow-x: hidden;
+  overflow: visible;
+  display: none;
+  position: relative;
+}
 
-  display: none; /* only one page shown */
+.content-box::before {
+  content: "";
+  position: absolute;
+  left: -110px;
+  top: -68px;
+  width: 500px;
+  aspect-ratio: 135 / 260;
+  background: url("assets/bookmark.png") no-repeat;
+  background-size: contain;
+  z-index: 6;
+  pointer-events: none;
+  user-select: none;
 }
 
 .content-box.is-active {
@@ -421,3 +436,4 @@ h4 {
 .switch input:checked + .slider::before {
   transform: translateX(13px);
 }
+
