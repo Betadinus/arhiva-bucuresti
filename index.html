@@ -15,6 +15,7 @@
 <div class="sidenav">
   <p class="ToC"> București</p>
   <h4>CHRONICA URBIS • 1459 - 2026</h4>
+    <a href="#" id="settingsLink"><span>Setări</span></a>
     <a href="#introducere" class="active"><span>Introducere</span></a>
     <a href="#centrul-istoric"><span>Centrul Istoric</span></a>
     <a href="#sectorul-1"><span>Sectorul 1</span></a>
@@ -100,6 +101,44 @@
 
   </div>
 
+</div>
+
+<div class="modal" id="settingsModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close="1"></div>
+
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+    <button class="modal-close" type="button" aria-label="Închide" data-close="1">×</button>    
+
+    <p class="settingsTitle">Setări</p>
+    <div class="settings-divider"></div>
+
+    <div class="settings-inner">
+      <div class="settings-grid">
+
+        <div class="setting-row">
+
+          <div class="setting-item">
+            <span class="setting-label">Mod Întunecat</span>
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <span class="setting-label">Placeholder</span>
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider"></span>
+            </label>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
 </div>
 
 </body>
