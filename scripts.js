@@ -66,24 +66,20 @@ function setActiveBoxFromHash() {
   const nextBox = document.getElementById(id);
   if (!nextBox) return;
 
-  // reset scroll when switching sections
   window.scrollTo({ top: 0, behavior: "auto" });
 
-  // sidenav highlight
   document.querySelectorAll(".sidenav a").forEach((a) => {
     a.classList.toggle("active", a.getAttribute("href") === "#" + id);
   });
 
   wireFooterArrows(id);
 
-  // show only the active content box
   document.querySelectorAll(".content-box").forEach((box) => {
     box.classList.remove("is-active");
   });
 
   nextBox.classList.add("is-active");
 
-  // restart animation cleanly
   nextBox.style.animation = "none";
   void nextBox.offsetHeight;
   nextBox.style.animation = "";
@@ -95,7 +91,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const blocks = document.querySelectorAll(".text-columns");
   await Promise.all([...blocks].map((el) => fillTextColumns(el)));
 
-  // sidenav click: if you click the already-active section, just go to top
   document.querySelectorAll(".sidenav a").forEach((a) => {
     a.addEventListener("click", (e) => {
       const target = a.getAttribute("href");
@@ -105,7 +100,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: "auto" });
       }
-      // otherwise: default behavior changes hash -> hashchange triggers setActiveBoxFromHash
     });
   });
 
