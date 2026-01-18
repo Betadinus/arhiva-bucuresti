@@ -37,13 +37,13 @@ h1 {
   font-size: 60px;
   margin-top: 30px;
   margin-bottom: 30px;
-  font-family: "Playfair Display", serif;
+  font-family: "EB Garamond", serif;
 }
 
 h2 {
   text-align: center;
   font-size: 20px;
-  font-family: "Libre Baskerville", serif;
+  font-family: "Cinzel", serif;
   margin-top: 80px;
   margin-bottom: 30px;
   color: #777777;
@@ -53,7 +53,7 @@ h2 {
 
 h3 {
   text-align: center;
-  font-family: "IM Fell English SC", serif;
+  font-family: "IM Fell English", serif;
   font-size: 20px;
   font-style: italic;
   color: #777777;
@@ -61,7 +61,7 @@ h3 {
 }
 
 h4 {
-  font-family: "im fell english", serif;
+  font-family: "IM Fell English", serif;
   font-size: 15px;
   color: #cfc6b8;
   margin-bottom: 50px;
@@ -72,13 +72,13 @@ h4 {
 
 .ToC {
   text-align: center;
-  font-family:"Pirata One", serif;
+  font-family: "MedievalSharp", serif;
   font-size: 60px;
   color: #B08A3E;
   font-weight: normal;
   margin-top: 20px;
   margin-bottom: 0px;
-  letter-spacing: 10px;
+  letter-spacing: 7px;
 }
 
 .divider{
@@ -110,7 +110,7 @@ h4 {
 .text-columns {
   column-count: 2;
   column-gap: 60px;
-  font-family: "Libre Baskerville", serif;
+  font-family: "EB Garamond", serif;
   font-size: 14px;
   line-height: 1.5;
   width: 85%;
@@ -124,7 +124,11 @@ h4 {
 }
 
 .text-columns p {
+  font-family: "EB Garamond", serif;
+  font-weight: normal;
+  font-size: 16px;
   margin: 0 0 1.2em 0;
+  letter-spacing: 0.04em;
 }
 
 .three::first-letter {
@@ -133,7 +137,7 @@ h4 {
   color: #B08A3E;
   padding-right: 10px;
   font-size: 3.5em;
-  font-family: "Pirata One", serif;
+  font-family: "medievalsharp", serif;
   float: left;
 }
 
@@ -146,7 +150,7 @@ h4 {
   border-left: #B08A3E 8px solid;
   box-sizing: border-box;
   padding: 5px 25px;
-  font-family: "playfair display", serif;
+  font-family: "EB Garamond", serif;
   font-size: 16px;
   line-height: 1.5;
   font-style: italic;
@@ -181,7 +185,7 @@ h4 {
   display: block;
   padding: 20px 28px;
   text-decoration: none;
-  font-family: "Libre Baskerville", serif;
+  font-family: "EB Garamond", serif;
   font-size: 20px;
   color: #cfc6b8;
   border-top: 1px solid rgba(255,255,255,0.08);
