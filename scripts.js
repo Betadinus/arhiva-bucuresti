@@ -55,8 +55,9 @@ function wireFooterArrows(activeId) {
     };
 
     nextBtn.onclick = () => {
-      if (index < sectionOrder.length - 1)
+      if (index < sectionOrder.length - 1) {
         location.hash = "#" + sectionOrder[index + 1];
+      }
     };
   });
 }
@@ -85,15 +86,55 @@ function setActiveBoxFromHash() {
   nextBox.style.animation = "";
 }
 
+function openModal(modal) {
+  if (!modal) return;
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal(modal) {
+  if (!modal) return;
+  modal.classList.remove("is-open");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   await waitForFonts();
 
   const blocks = document.querySelectorAll(".text-columns");
   await Promise.all([...blocks].map((el) => fillTextColumns(el)));
 
+  const settingsLink = document.getElementById("settingsLink");
+  const settingsModal = document.getElementById("settingsModal");
+
+  if (settingsLink && settingsModal) {
+    settingsLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      openModal(settingsModal);
+    });
+
+    settingsModal.addEventListener("click", (e) => {
+      const t = e.target;
+      if (t && t.dataset && t.dataset.close) {
+        closeModal(settingsModal);
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && settingsModal.classList.contains("is-open")) {
+        closeModal(settingsModal);
+      }
+    });
+  }
+
   document.querySelectorAll(".sidenav a").forEach((a) => {
     a.addEventListener("click", (e) => {
       const target = a.getAttribute("href");
+
+      if (!target || target === "#" || target === "") return;
+
       const current = window.location.hash || "#introducere";
 
       if (target === current) {
